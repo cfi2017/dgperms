@@ -5,37 +5,39 @@ import "github.com/bwmarrin/discordgo"
 type Permissions = int
 
 const (
+	// User may create instant invites
 	PermissionCreateInstantInvite = 0x00000001
-	PermissionKickMembers         = 0x00000002 // may require 2fa
-	PermissionBanMembers          = 0x00000004 // may require 2fa
-	PermissionAdministrator       = 0x00000008 // may require 2fa
-	PermissionManageChannels      = 0x00000010 // may require 2fa
-	PermissionManageGuild         = 0x00000020 // may require 2fa
-	PermissionAddReactions        = 0x00000040
-	PermissionViewAuditLog        = 0x00000080
-	PermissionViewChannel         = 0x00000400
-	PermissionSendMessages        = 0x00000800
-	PermissionSendTTSMessages     = 0x00001000
-	PermissionManageMessages      = 0x00002000 // may require 2fa
-	PermissionEmbedLinks          = 0x00004000
-	PermissionAttachFiles         = 0x00008000
-	PermissionReadMessageHistory  = 0x00010000
-	PermissionMentionEveryone     = 0x00020000
-	PermissionUseExternalEmojis   = 0x00040000
-	PermissionConnect             = 0x00100000
-	PermissionSpeak               = 0x00200000
-	PermissionMuteMembers         = 0x00400000
-	PermissionDeafenMembers       = 0x00800000
-	PermissionMoveMembers         = 0x01000000
-	PermissionUseVAD              = 0x02000000
-	PermissionPrioritySpeaker     = 0x00000100
-	PermissionStream              = 0x00000200
-	PermissionChangeNickname      = 0x04000000
-	PermissionManageNicknames     = 0x08000000
-	PermissionManageRoles         = 0x10000000 // may require 2fa
-	PermissionManageWebhooks      = 0x20000000 // may require 2fa
-	PermissionManageEmojis        = 0x40000000 // may require 2fa
-	PermissionAll                 = 2146958847
+	// User may kick members
+	PermissionKickMembers        = 0x00000002 // may require 2fa
+	PermissionBanMembers         = 0x00000004 // may require 2fa
+	PermissionAdministrator      = 0x00000008 // may require 2fa
+	PermissionManageChannels     = 0x00000010 // may require 2fa
+	PermissionManageGuild        = 0x00000020 // may require 2fa
+	PermissionAddReactions       = 0x00000040
+	PermissionViewAuditLog       = 0x00000080
+	PermissionViewChannel        = 0x00000400
+	PermissionSendMessages       = 0x00000800
+	PermissionSendTTSMessages    = 0x00001000
+	PermissionManageMessages     = 0x00002000 // may require 2fa
+	PermissionEmbedLinks         = 0x00004000
+	PermissionAttachFiles        = 0x00008000
+	PermissionReadMessageHistory = 0x00010000
+	PermissionMentionEveryone    = 0x00020000
+	PermissionUseExternalEmojis  = 0x00040000
+	PermissionConnect            = 0x00100000
+	PermissionSpeak              = 0x00200000
+	PermissionMuteMembers        = 0x00400000
+	PermissionDeafenMembers      = 0x00800000
+	PermissionMoveMembers        = 0x01000000
+	PermissionUseVAD             = 0x02000000
+	PermissionPrioritySpeaker    = 0x00000100
+	PermissionStream             = 0x00000200
+	PermissionChangeNickname     = 0x04000000
+	PermissionManageNicknames    = 0x08000000
+	PermissionManageRoles        = 0x10000000 // may require 2fa
+	PermissionManageWebhooks     = 0x20000000 // may require 2fa
+	PermissionManageEmojis       = 0x40000000 // may require 2fa
+	PermissionAll                = 2146958847
 )
 
 func ComputeBasePermissions(guild *discordgo.Guild, member *discordgo.Member) (perms Permissions) {
